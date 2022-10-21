@@ -9,3 +9,9 @@ Xậy dựng ứng dụng web bằng Flask tích hợp AI trên AWS Elastic Bean
 |-----------|-----------------|
 | Nguyễn Văn Đạt | 16110050 |
 | Huỳnh Ngọc Sáng | 18123149 |
+
+## Các dịch vụ sử dụng
+1. Elastic Beanstalk
+2. Virtual Private Cloud
+3. DynamoDB
+4. Load Balancers
