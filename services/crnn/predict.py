@@ -33,7 +33,7 @@ def predict(datapath):
     K.set_session(sess)
 
     batch_size = 3
-    models = glob.glob('{}/best_*.h5'.format('/home/zero/Workspace/Courses/Cloud/cloud-project/services/crnn/model'))
+    models = glob.glob('{}/best_*.h5'.format(os.getcwd() + '/services/crnn/model'))
     test_generator  = TextImageGenerator(datapath, None, *SIZE, batch_size, 32, None, False, MAX_LEN)
     test_generator.build_data()
     # decoded_res = []

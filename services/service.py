@@ -3,7 +3,7 @@ import glob
 import os
 
 model_default = './model/'
-img_path = '/home/zero/Workspace/Courses/Cloud/cloud-project/uploads/'
+img_path = os.getcwd() + '/uploads/'
 def NDCV():
     print("NDCV")
     predict_res = predict(img_path)
