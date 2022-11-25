@@ -31,9 +31,12 @@
                     </div>
                 </div>
                 <div class="col">
-                    {% if data %}
+                    {% for i rang(0, len) %}
+                        <span> {{ predict[i] }} </span>
+                    {% endfor %}
+                    <!-- {% if data %}
                     <span>{{ data }}</span>
-                    {% endif %}
+                    {% endif %} -->
                     <form action="{{href}}" method="post" enctype="multipart/form-data">
                         <input type="file" name="file" autocomplete="off" required>
                         <br>

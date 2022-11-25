@@ -1,5 +1,5 @@
-from crypt import methods
 from flask import Flask, render_template, redirect
+import services.service as service
 
 # from services import service
 
@@ -22,7 +22,7 @@ def ndcv():
 def ndcv_post():
     data = "post method"
     predict = service.NNCV()
-    return render_template('index.html', href='/ndcv', data=data, predict = predict)
+    return render_template('index.html', href='/ndcv', data=data, predict = predict, len=len(predict))
 
 if __name__ == "__main__":
     application.debug = True
