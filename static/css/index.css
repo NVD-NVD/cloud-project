@@ -21,6 +21,10 @@ body {
     margin-left: 30%;
 }
 
+.input-form{
+    width: 100%;
+}
+
 /* ------------FOOTER-------------- */
 .footer {
     position: fixed;

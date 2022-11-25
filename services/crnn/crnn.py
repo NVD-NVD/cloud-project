@@ -12,7 +12,7 @@ from keras.layers.merge import add, concatenate
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adadelta, Adam
 from tensorflow.keras.callbacks import EarlyStopping, LearningRateScheduler, ModelCheckpoint, TensorBoard, ReduceLROnPlateau
-from crnn.loader import TextImageGenerator, MAX_LEN, CHAR_DICT, SIZE, VizCallback, ctc_lambda_func
+from services.crnn.loader import TextImageGenerator, MAX_LEN, CHAR_DICT, SIZE, VizCallback, ctc_lambda_func
 import numpy as np
 import tensorflow as tf
 from keras import backend as K

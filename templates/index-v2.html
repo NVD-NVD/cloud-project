@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Artificial Intelligence</h1>
+        </header>
+        
+        <div class="main">
+            <div class="menu">
+                <div class="menu__list--group">
+                    <a href="/crnn" class="menu--item" aria-current="true">
+                        Nhân dang chữ viết
+                    </a>
+                    <a href="#" class="menu--item">A second link item</a>
+                    <a href="#" class="menu--item">A third link item</a>
+                    <a href="#" class="menu--item">A fourth link item</a>
+                    <a href="#" class="menu--item">A disabled link item</a>
+                </div>
+            </div>
+            <hr>
+            <div class="content">
+                <div class="input-form">
+                    <form action="{{href}}" method="post" enctype="multipart/form-data">
+                        <img id="out-img" class="img"/>
+                        <input class="input-tag" type="file" name="file"  onchange="loadFile(event)">
+                        <br>
+                        <button class="btn-submit" type="submit">submit</button>
+                    </form>
+                </div>
+                <div class="output-data">
+
+                    {% if data_predict %}
+                    {% for i in data_predict %}
+                    <span> {{ i }} </span>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Copy @ 2022 UTE</p>
+        </footer>
+    </div>
+
+    <script>
+        var loadFile = function(event) {
+          var reader = new FileReader();
+          reader.onload = function(){
+            var output = document.getElementById('out-img');
+            output.src = reader.result;
+          };
+          reader.readAsDataURL(event.target.files[0]);
+        };
+      </script>
+</body>
+
+</html>

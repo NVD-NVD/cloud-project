@@ -1,4 +1,4 @@
-from crnn.predict import predict
+from services.crnn.predict import predict
 import glob
 import os
 
@@ -8,4 +8,5 @@ def NDCV():
     print("NDCV")
     predict_res = predict(img_path)
     print('predict_res in service: ', predict_res)
-NDCV()
+    return predict_res
+# NDCV()

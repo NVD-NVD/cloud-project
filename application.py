@@ -20,9 +20,9 @@ def ndcv():
 
 @application.route('/ndcv', methods=['POST'])
 def ndcv_post():
-    data = "post method"
-    predict = service.NNCV()
-    return render_template('index.html', href='/ndcv', data=data, predict = predict, len=len(predict))
+    data_predict = service.NDCV()
+    print('type of predict',type(data_predict))
+    return render_template('index.html', href='/ndcv', data_predict = data_predict)
 
 if __name__ == "__main__":
     application.debug = True

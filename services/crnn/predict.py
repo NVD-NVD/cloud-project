@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
-from crnn.crnn import get_model
-from crnn.loader import SIZE, MAX_LEN, TextImageGenerator, decode_batch
+from services.crnn.crnn import get_model
+from services.crnn.loader import SIZE, MAX_LEN, TextImageGenerator, decode_batch
 from keras import backend as K
 from keras.preprocessing import image                                                        
 import glob

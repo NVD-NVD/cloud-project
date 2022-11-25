@@ -31,20 +31,18 @@
                     </div>
                 </div>
                 <div class="col">
-                    {% for i rang(0, len) %}
-                        <span> {{ predict[i] }} </span>
-                    {% endfor %}
-                    <!-- {% if data %}
-                    <span>{{ data }}</span>
-                    {% endif %} -->
-                    <form action="{{href}}" method="post" enctype="multipart/form-data">
-                        <input type="file" name="file" autocomplete="off" required>
-                        <br>
-                        <button type="submit">submit</button>
-                    </form>
+                    <div class="input-form">
+                        <form action="{{href}}" method="post" enctype="multipart/form-data">
+                            <input type="file" name="file" autocomplete="off" required>
+                            <br>
+                            <button type="submit">submit</button>
+                        </form>
+                    </div>
 
-                    {% if predict %}
-                    <span>{{ predict }}</span>
+                    {% if data_predict %}
+                    {% for i in data_predict %}
+                    <span> {{ i }} </span>
+                    {% endfor %}
                     {% endif %}
 
                 </div>

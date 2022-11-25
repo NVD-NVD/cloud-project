@@ -1,0 +1,123 @@
+/*------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+html, body{
+    background-color: rgb(247, 243, 243);
+    height: 100%;
+}
+
+/*------------------------------*/
+.app {
+    width: 1200px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px ;
+}
+.app > .header, .footer {
+    text-align: center;
+    width: 100%;
+}
+/*------------------------------*/
+.header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.header h1{
+    font-size: 2rem;
+}
+/*------------------------------*/
+.main{
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*------------------------------*/
+.menu {
+    width: 200px;
+    /* border: 1px solid black;
+    border-radius: 10px ; */
+}
+.menu__list--group{
+    display: flex;
+    flex-direction: column;
+}
+.menu__list--group--item {
+    
+}
+.menu--item {
+    padding: 10px 2px;
+    border-bottom: 1px solid black;
+    color: black;
+}
+.menu--item:hover {
+    background-color: aqua;
+}
+.content {
+    width: 900px;
+}
+.content .img, .output-data{
+    width: 900px;
+    height: 220px;
+
+    border-radius: 10px;
+}
+.content .img {
+    
+}
+.content >.input-form {
+    height: 50%;
+    position: relative;
+}
+.content > .input-form > form > input, button{
+    position: absolute;
+    left: 40%;
+    bottom: 50px;
+    margin-bottom: 20px;
+}
+.content > .input-form > form > button{
+    margin-bottom: -50px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: yellow;
+}
+.content > .output-data {
+    height: 50%;
+    border: 1px solid gray;
+}
+
+/*------------------------------*/
+.app > .footer{
+    display: none;
+}
+.app > .footer p{
+    margin-top: 20px;
+}
+/*------------------------------*/
+/*------------------------------*/
+/*------------------------------*/
+/*------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
