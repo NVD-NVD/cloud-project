@@ -15,3 +15,4 @@ Xậy dựng ứng dụng web bằng Flask tích hợp AI trên AWS Elastic Bean
 2. Virtual Private Cloud
 3. DynamoDB
 4. Load Balancers
+5. Docker
