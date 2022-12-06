@@ -40,7 +40,13 @@ def ndcv_post():
 
 @application.route('/ndgn', methods=['GET'])
 def ndgn():
-    return render_template('index_v2.html', is_have = False)
+    return render_template('index_v2.html',href='/ndgn', is_have = False)
+@application.route('/ndkm', methods=['GET'])
+def ndkm():
+    return render_template('index_v2.html',href='/ndkm', is_have = False)
+@application.route('/ndvt', methods=['GET'])
+def ndvt():
+    return render_template('index_v2.html',href='/ndvt', is_have = False)
 if __name__ == "__main__":
     application.debug = True
     application.run(host='0.0.0.0', port=5000)
