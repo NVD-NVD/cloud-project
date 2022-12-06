@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Artificial Intelligence</h1>
+        </header>
+        
+        <div class="main">
+            <div class="menu">
+                <div class="menu__list--group">
+                    <a href="/ndcv" class="menu--item" aria-current="true">
+                        Nhân dang chữ viết
+                    </a>
+                    <a href="/ndgn" class="menu--item">
+                        Nhan dang giong noi
+                    </a>
+                    <a href="ndkm" class="menu--item">
+                        nhan dang khuan mat
+                    </a>
+                    <a href="ndvt" class="menu--item">nhan dag vat the</a>
+                </div>
+            </div>
+            <hr>
+            <div class="content">
+                {% if is_have %}
+                    <div class="input-form">
+                        <form action="{{href}}" method="post" enctype="multipart/form-data">
+                            {% if is_image %}
+                            <img id="out-img" class="img" src="{{ img }}" alt="Image"/>
+                            {% else %}
+                            <img id="out-img" class="img"/>
+                            {% endif%}
+                            <input class="input-tag" type="file" id="myFile" name="file-uploaded"  onchange="loadFile(event)">
+                            <br>
+                            <button class="btn-submit" type="submit" id="myFile">submit</button>
+                        </form>
+                    </div>
+                    <div class="output-data">
+                        
+                        {% if data_predict %}
+                        {% for i in data_predict %}
+                        <span> {{ i }} </span>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <h1>Chuc nang hien khong kha thi</h1>
+                {% endif %}
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Copy @ 2022 UTE</p>
+        </footer>
+    </div>
+
+    <script>
+        var loadFile = function(event) {
+          var reader = new FileReader();
+          reader.onload = function(){
+            var output = document.getElementById('out-img');
+            output.src = reader.result;
+          };
+          reader.readAsDataURL(event.target.files[0]);
+        };
+      </script>
+</body>
+
+</html>
