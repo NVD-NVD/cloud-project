@@ -36,7 +36,9 @@ html, body{
 }
 /*------------------------------*/
 .main{
+    width: 95%;
     height: 90%;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
