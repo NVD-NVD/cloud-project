@@ -3,10 +3,9 @@ import glob
 import os
 
 model_default = './model/'
-img_path = os.getcwd() + '/uploads/'
+img_path = os.getcwd() + '/static/bw/'
 def NDCV():
     print("NDCV")
     predict_res = predict(img_path)
     print('predict_res in service: ', predict_res)
     return predict_res
-# NDCV()

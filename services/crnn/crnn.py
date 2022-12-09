@@ -29,7 +29,8 @@ def get_model(input_shape, training, finetune):
     inner = Reshape(target_shape=(int(inner.shape[1]), -1), name='reshape')(inner)
     inner = Dense(512, activation='relu', kernel_initializer='he_normal', name='dense1')(inner) 
     inner = Dropout(0.25)(inner) 
-    lstm = Bidirectional(LSTM(512, return_sequences=True, kernel_initializer='he_normal', name='lstm1', dropout=0.25, recurrent_dropout=0.25))(inner) 
+    lstm = Bidirectional(LSTM(512, return_sequences=True, kernel_initializer='he_normal', name='lstm1', 
+                                                            dropout=0.25, recurrent_dropout=0.25))(inner) 
 
     y_pred = Dense(CHAR_DICT, activation='softmax', kernel_initializer='he_normal',name='dense2')(lstm)
     

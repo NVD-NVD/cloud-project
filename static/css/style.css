@@ -72,7 +72,7 @@ html, body{
     border-radius: 10px;
 }
 .content .img {
-    
+    object-fit: contain;
 }
 .content >.input-form {
     height: 50%;

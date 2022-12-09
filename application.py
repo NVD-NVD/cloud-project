@@ -2,12 +2,17 @@ from flask import Flask, render_template, redirect, request
 import services.service as service
 import os, shutil
 import glob
+import cv2
 
 application = Flask(__name__, static_folder='static', template_folder='templates')
 
 UPLOAD_FOLDER = os.path.join('static', 'uploads')
+UPLOAD_FOLDER_BW = os.path.join('static', 'bw')
+
+save_bw = os.getcwd()+'/static/bw/'
 application.secret_key = "secret key"
 application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+application.config['UPLOAD_FOLDER_BW'] = UPLOAD_FOLDER_BW
 application.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -33,6 +38,12 @@ def ndcv_post():
     filename = _img.filename
     file_extension = filename.split(".")[-1]
     _img.save(os.path.join(UPLOAD_FOLDER, '1.' + file_extension))
+
+    _img_bw = cv2.imread(UPLOAD_FOLDER+'/1.'+file_extension, 2)
+    ret, bw_img = cv2.threshold(_img_bw, 127, 255, cv2.THRESH_BINARY)
+
+    cv2.imwrite(save_bw+'1.png', bw_img)
+
     data_predict = service.NDCV()
     print('type of predict',type(data_predict))
     img = os.path.join(UPLOAD_FOLDER, '1.' + file_extension)
