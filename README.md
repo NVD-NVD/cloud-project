@@ -13,6 +13,5 @@ Xậy dựng ứng dụng web bằng Flask tích hợp AI trên AWS Elastic Bean
 ## Các dịch vụ sử dụng
 1. Elastic Beanstalk
 2. Virtual Private Cloud
-3. DynamoDB
-4. Load Balancers
-5. Docker
+3. Load Balancers
+4. Docker
